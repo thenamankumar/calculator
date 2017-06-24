@@ -41,7 +41,7 @@ body {
 .keypad {
     position: relative;
     background: #292f36;
-    padding: 4% 0 5%!important;
+    padding: 5% 0 5%!important;
 }
 
 .keypad .row {
