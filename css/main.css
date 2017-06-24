@@ -31,6 +31,7 @@ body {
     resize: none;
     border: solid #1c2128;
     border-width: 0 0 10px;
+    border-radius: 0!important;
     color: #5cc8ff;
     font-size: 2.5em;
     text-align: right;
