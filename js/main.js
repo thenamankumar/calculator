@@ -1,43 +1,50 @@
 var screen = $('#calc-screen');
 
-$('body').keypress(function (e) {
-    if (e.which === 13) {
-        var value = screen.val();
-        screen.val(eval(value));
+function calc() {
+    var value = screen.val();
+    var result;
+    try {
+        result= eval(value);
+    } catch (e) {
+            result='Error';
     }
+    screen.val(result);
+    $('#clear-btn').text('AC');
+}
+
+function enter(e) {
+    if (e.which === 13) {
+        calc();
+    }
+}
+
+$('body').keypress(function (e) {
+    enter(e);
 });
 
-screen.keypress(function (e) {
-    if (e.which === 13) {
-        var value = screen.val();
-        screen.val(eval(value));
-    }
-});
 
 $('button').keypress(function (e) {
-    if (e.which === 13) {
-        var value = screen.val();
-        screen.val(eval(value));
-    }
+    enter(e);
     return false;
 });
 
 
 $('button').click(function () {
     var key = $(this).text();
+    var value;
     console.log(key);
     if (key === '=') {
-        var value = screen.val();
-        screen.val(eval(value));
+        calc();
     } else if (key === 'AC') {
         screen.val('');
-    } else if (key === '<-') {
+        $('#clear-btn').text('CE');
+    } else if (key === 'CE') {
         value = screen.val();
         screen.val(value.substring(0, value.length - 1));
     }
     else {
         value = screen.val();
         screen.val(value + key);
+        $('#clear-btn').text('CE');
     }
-
 });
