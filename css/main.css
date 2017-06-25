@@ -31,8 +31,8 @@ body {
     resize: none;
     border: solid #1c2128;
     border-width: 0 0 10px;
-    border-radius: 0!important;
-    color: #5cc8ff;
+    border-radius: 0 !important;
+    color: #d63c6b;
     font-size: 2.5em;
     text-align: right;
     overflow: auto;
@@ -41,7 +41,7 @@ body {
 .keypad {
     position: relative;
     background: #292f36;
-    padding: 5% 0 5%!important;
+    padding: 5% 0 5% !important;
 }
 
 .keypad .row {
@@ -51,8 +51,8 @@ body {
 }
 
 .btn {
-    padding-top: 5%!important;
-    padding-bottom: 5%!important;
+    padding-top: 5% !important;
+    padding-bottom: 5% !important;
     background: transparent;
     color: #5cc8ff;
     font-size: 2em !important;
@@ -73,7 +73,7 @@ body {
 
 .screen.active.focus, .screen.active:focus, .screen.focus, .screen:active.focus, .screen:active:focus, .screen:focus, .screen.active, .screen:active {
     outline: none !important;
-    color: #00a3f5 !important;
+    color: #c41c4f !important;
     box-shadow: none !important;
 }
 
