@@ -4,16 +4,17 @@ function calc() {
     var value = screen.val();
     var result;
     try {
-        result= eval(value);
+        result = eval(value);
     } catch (e) {
-            result='Error';
+        result = 'Error';
     }
     screen.val(result);
     $('#clear-btn').text('AC');
 }
 
 function enter(e) {
-    if (e.which === 13) {
+    var key = e.which | e.keyCode;
+    if (/[\n\r]/.test(String.fromCharCode(key))) {
         calc();
     }
 }
@@ -41,8 +42,7 @@ $('button').click(function () {
     } else if (key === 'CE') {
         value = screen.val();
         screen.val(value.substring(0, value.length - 1));
-    }
-    else {
+    } else {
         value = screen.val();
         screen.val(value + key);
         $('#clear-btn').text('CE');
