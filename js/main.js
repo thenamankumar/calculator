@@ -14,7 +14,7 @@ function calc() {
     }
     screen.val(result);
     $('#clear-btn').text('AC');
-    reset=1;
+    reset = 1;
 }
 
 function enter(e) {
@@ -39,7 +39,7 @@ $('button').click(function () {
     var key = $(this).text();
     var value;
     console.log(key);
-    if(reset===1) {
+    if (reset === 1) {
         screen.val('');
         reset = 0;
     }
@@ -60,7 +60,15 @@ $('button').click(function () {
         $('#clear-btn').text('CE');
     } else {
         value = screen.val();
-        screen.val(value + key);
-        $('#clear-btn').text('CE');
+        if (value.length < screen.attr('maxlength')-1) {
+            screen.val(value + key);
+            $('#clear-btn').text('CE');
+        }
     }
 });
+
+(function () {
+    var screenWidth = screen.width();
+    var maxLength = screenWidth * 0.049;
+    screen.attr('maxlength', maxLength);
+}());
