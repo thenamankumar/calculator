@@ -55,12 +55,14 @@ $('button').click(function () {
     } else if (key === 'ans') {
         if (ans !== undefined && ans !== null) {
             value = screen.val();
-            screen.val(value + ans);
+            if ((value.length + ans.toString().length) < screen.attr('maxlength') - 1) {
+                screen.val(value + ans);
+            }
         }
         $('#clear-btn').text('CE');
     } else {
         value = screen.val();
-        if (value.length < screen.attr('maxlength')-1) {
+        if (value.length < screen.attr('maxlength') - 1) {
             screen.val(value + key);
             $('#clear-btn').text('CE');
         }
