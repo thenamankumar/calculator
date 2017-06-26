@@ -4,6 +4,7 @@ var reset;
 
 function calc() {
     var value = screen.val();
+    value.replace('ans',ans);
     var result;
     try {
         result = eval(value);
@@ -55,8 +56,8 @@ $('button').click(function () {
     } else if (key === 'ans') {
         if (ans !== undefined && ans !== null) {
             value = screen.val();
-            if ((value.length + ans.toString().length) < screen.attr('maxlength') - 1) {
-                screen.val(value + ans);
+            if ((value.length + 3) < screen.attr('maxlength') - 1) {
+                screen.val(value + 'ans');
             }
         }
         $('#clear-btn').text('CE');
